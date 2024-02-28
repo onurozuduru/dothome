@@ -13,17 +13,18 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Get craft
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           repository: onurozuduru/craft
-          path: ./craft
+          path: craft
 
       - name: Generate dothome
         run: |
-          bash ./craft/craft.sh --overwrite --glue -p dothome sources/header sources/common.sh sources/new.sh sources/add.sh sources/init.sh sources/main.sh
+          bash craft/craft.sh --overwrite --glue -p dothome sources/header sources/common.sh sources/new.sh sources/add.sh sources/init.sh sources/main.sh
           chmod +x dothome
 
       - name: Commit and push the new script
