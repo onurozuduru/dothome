@@ -1,0 +1,35 @@
+name: Generate
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'sources/**'
+  pull_request:
+    branches: [ "master" ]
+    paths:
+      - 'sources/**'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get craft
+      - uses: actions/checkout@v4
+        with:
+          repository: onurozuduru/craft
+          path: ./craft
+
+      - name: Generate dothome
+        run: |
+          bash ./craft/craft.sh --overwrite --glue -p dothome sources/header sources/common.sh sources/new.sh sources/add.sh sources/init.sh sources/main.sh
+          chmod +x dothome
+
+      - name: Commit and push the new script
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: 'Auto update dothome'
+          add: 'dothome'
+          pathspec_error_handling: exitImmediately
