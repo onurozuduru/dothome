@@ -1,4 +1,3 @@
-
 init_from_dot_dir()
 {
     local pattern_match="${PREFIX_NO_DOT}"
