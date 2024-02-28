@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate dothome
         run: |
-          bash craft/craft.sh --overwrite --glue -p dothome sources/header sources/common.sh sources/new.sh sources/add.sh sources/init.sh sources/main.sh
+          bash craft/craft.sh --overwrite -p --glue dothome sources/header sources/common.sh sources/new.sh sources/add.sh sources/init.sh sources/main.sh
           chmod +x dothome
 
       - name: Commit and push the new script
