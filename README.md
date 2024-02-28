@@ -4,7 +4,7 @@ Simple dot files manager script that requires Bash version 4 or higher.
 ```bash
 Usage: ./dothome [ -b | --base <DIR> ] [ -d | --dotfiles <NAME> ] [ -n | --new ] [ -i | --init ] [ -a | --add <FILE> ] [ -h | --help ]
 Simple dot files manager.
-        -b,--base <DIR>         Base directory to use for operations. Default: '/home/onur'
+        -b,--base <DIR>         Base directory to use for operations. Default: '${HOME}'
         -d,--dotfiles <NAME>    Name of a directory relative to base directory to use for operations. Default: 'dotfiles'
         -n,--new                Create new dot files directory under base directory.
         -i,--init               Link files from dot files directory to their relative locations under base directory.
