@@ -129,7 +129,7 @@ init_from_dot_dir()
         exit 1
     fi
 
-    local all_dot_files=$(find "${DOT_DIR_PATH}" -type f ! -path "*.*/*" \( ! -iname ".*" \) -printf '%P\n')
+    local all_dot_files=$(find "${DOT_DIR_PATH}" -type f ! -path "*.github/*" ! -path "*.git/*" \( ! -iname ".*" ! -iname "*.md" \) -printf '%P\n')
 
     for dot_file in ${all_dot_files}
     do
