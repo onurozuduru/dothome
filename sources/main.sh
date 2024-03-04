@@ -96,4 +96,3 @@ if [[ "${MODE}" == "${MODES[-a]}" ]]; then
 else
     ${MODE}
 fi
-
