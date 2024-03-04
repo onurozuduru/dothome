@@ -18,7 +18,7 @@ print_error_line()
 log_error()
 {
     print_error_line
-    echo "$1"
+    echo -e "$1"
     print_error_line
 }
 
