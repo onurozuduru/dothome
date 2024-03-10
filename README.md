@@ -15,7 +15,7 @@ Simple dot files manager.
 ## How It Works
 It uses `${HOME}` as default base directory and takes with `-d` a relative directory name to use as dot files directory.
 Basically reflects the home folder structure under dot files directory and links related files to their dot files directory version.
-Converts names start with '.' to a version starts with 'dot.' under dot files to not having hidden files under dot files.
+It converts names start with '.' to a version starts with 'dot.' under dot files directory to avoid hidden files. Name of the linked version under base directory remains the same.
 
 ### New
 Creates a new dot files directory.
